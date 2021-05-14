@@ -10,8 +10,11 @@ def collatz(n):
 
 
 n = int(input("n = "))
-d = []
+d = [n]
 steps = 0
+plt.figure(f"CollatzConjucture n={n}")
+
+plt.title(f"n = {n}")
 while True:
     if n != 1:
         #print(n)
@@ -20,10 +23,6 @@ while True:
         d.append(n)
     else:
         #print("1\n")
+        print(d)
         print(f"It Took {steps} steps")
         break
-
-Purple = '#9D2EC5'
-
-plt.plot(d[::-1], d, Purple, linewidth=3)
-plt.show()
