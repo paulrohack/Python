@@ -1,4 +1,3 @@
-from matplotlib import pyplot as plt
 
 def collatz(n):
     if n % 2 == 0:
@@ -12,9 +11,7 @@ def collatz(n):
 n = int(input("n = "))
 d = [n]
 steps = 0
-plt.figure(f"CollatzConjucture n={n}")
 
-plt.title(f"n = {n}")
 while True:
     if n != 1:
         #print(n)
