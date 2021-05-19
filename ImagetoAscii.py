@@ -2,7 +2,7 @@ from  PIL import Image
 import pygame as py
 
 py.font.init()
-path = input("Image path: ")
+path = input("Image path: ")  
 image = Image.open(path)
 W, H = 1000, 700
 image = image.resize((W, H))
