@@ -4,10 +4,10 @@ import pygame as py
 py.font.init()
 path = input("Image path: ")  
 image = Image.open(path)
-W, H = 1000, 700
-image = image.resize((W, H))
+W, H = image.width * 2, image.height * 2
+image = image.resize((W , H))
 image = image.convert("L")
-w = 12
+w = 10
 b = py.Color('black')
 font = py.font.SysFont("algerian", 26)
 n = 0
