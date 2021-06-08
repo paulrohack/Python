@@ -8,15 +8,24 @@ p = ["Mask", "No Mask"]
 nn = 0
 pn = 0
 n = 0
-cap = cv2.VideoCapture(1)
-model = tensorflow.keras.models.load_model('H:\Python\AI\MaskDetection\keras_model.h5')
+cap = cv2.VideoCapture(0)
+model = tensorflow.keras.models.load_model('H:\Python\MaskDetection\keras_model.h5')
+path = 'H:\Python\MaskDetection\img.jpg'
+size = (224, 224)
+text = '-------'
+
 while True:
     _, img = cap.read()
-    cv2.imwrite('H:\Python\AI\MaskDetection\img.jpg', img)
+    img = cv2.putText(img, text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+    cv2.imshow("HELLO", img)
+    
+    cv2.imwrite(path, img)
+    # img = cv2.resize(img, size)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-    image = Image.open('H:\Python\AI\MaskDetection\img.jpg')
+    image = Image.open(path)
+    # image = Image.fromarray(img)
     # image.show()
-    size = (224, 224)
+
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
     image_array = np.asarray(image)
     normalized_image_array = (image_array.astype(np.int64) / 127.0) - 1
@@ -33,8 +42,11 @@ while True:
     else:
         n = 1
         nn = 1
-    if pn != nn and int((maxp)*100) > 65:
-        print(f'{p[n]}\nConfidenceLevel: {int((maxp)*100)}%')
+    if pn != nn and int((maxp)*100) > 75:
+        text = (f'{p[n]} >>> ConfidenceLevel: {int((maxp)*100)}%')        
+    if cv2.waitKey(1) & 0xff == ord('q'):        
+        break
+
         
 
 
