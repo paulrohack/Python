@@ -10,10 +10,10 @@ translator = Translator()
 font = cv2.FONT_HERSHEY_SIMPLEX
 while True:
     _, img = cap.read()  
-    cv2.imshow('s', img)
+    cv2.imshow('Window', img)
     if cv2.waitKey(1) & 0xff == ord('w'):
         print("Taken pic") 
-        cv2.destroyWindow('s')
+        cv2.destroyWindow('Window')
         cv2.imwrite('H:\Python\ImageTranslator\img.png', img)
         word = pytesseract.image_to_data(Image.open('H:\Python\ImageTranslator\img.png'))
         word = word.splitlines()
