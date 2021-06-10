@@ -27,7 +27,7 @@ while True:
 
                     t = translator.translate(c, dest='english')
                     cv2.rectangle(img,(x, y), (x+w, y+h) , (255, 0, 0))
-                    cv2.putText(img, t.text, (x, y - h), font, 0.5, (0, 0, 255), 2)
+                    cv2.putText(img, t.text, (x, y), font, 0.5, (0, 0, 255), 2)
                     
                     cv2.imwrite('H:\Python\ImageTranslator\img.png', img)
         i = Image.open('H:\Python\ImageTranslator\img.png')
