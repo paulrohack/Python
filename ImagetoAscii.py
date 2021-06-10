@@ -1,20 +1,26 @@
 from  PIL import Image
 import pygame as py
+import cv2
+
+cap = cv2.VideoCapture(0)
 
 py.font.init()
-path = input("Image path: ")  
-image = Image.open(path)
-W, H = image.width * 2, image.height * 2
-image = image.resize((W , H))
-image = image.convert("L")
+
 w = 10
 b = py.Color('black')
+white = py.Color('white')
 font = py.font.SysFont("algerian", 26)
 n = 0
 char = ["#", "$", "0", "%", "+", "=", "|", "i", "-", ";", ".", " "]
-WIN = py.display.set_mode((W, H), py.RESIZABLE)
+WIN = py.display.set_mode((640 * 2, 480 * 2), py.RESIZABLE)
 while True:
-    WIN.fill((255, 255, 255))
+    _, image = cap.read()
+    g = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    image = Image.fromarray(g)
+    W, H = image.width * 2 , image.height * 2
+    image = image.resize((W , H))
+    image = image.convert("L")
+    WIN.fill(white)
     for x in range(0, W, w):
         for y in range(0, H, w):
             p = image.getpixel((x, y))
@@ -56,6 +62,8 @@ while True:
                 WIN.blit(label, (x, y))
             #py.draw.rect(WIN, (p, p, p), (x, y, w, w))
     py.display.update()
+    if cv2.waitKey(1) & 0xff == ord('q'):        
+        break
     for events in py.event.get():
         if events.type == py.QUIT:
             py.quit()
