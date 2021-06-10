@@ -1,5 +1,5 @@
 import random
-path= 'D:\\Projects\\My_Projects_All\\Projects-Python-master\\GAMES\\PASS_GENERATOR'
+path= 'GAMES\\PASS_GENERATOR'
 Link = (path + 'PASS_FILE.txt')
 password_characters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOASDFGHJKLZXCVBNMP1234567890!@#$%*"
 password_length = 8
