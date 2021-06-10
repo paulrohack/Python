@@ -1,6 +1,8 @@
 from pyzbar.pyzbar import decode
 from PIL import Image
-import cv2, webbrowser
+import cv2
+import webbrowser
+import pyperclip as pc
 
 webcam = True
 path = "H:\\Python\\Qr_Images\\1.png"
@@ -21,11 +23,11 @@ while True:
         rect = p[0].rect
         text = (p[0].data).decode('utf-8')
         if ptext != text:
-            print(text)
+            print(text + " >>> Text is copied to your clipboard")
             if "//" in text :
                 webbrowser.open_new(text)
-                # web = False
-                # webbrowser.open_new(text)
+            else:
+                pc.copy(text)
         cv2.rectangle(img, (rect.left, rect.top), (rect.left+rect.width, rect.top+rect.height), (255, 0, 0), 2)
         cv2.putText(img, text, (rect.left, rect.top), cv2.FONT_HERSHEY_PLAIN, 2, (0, 0, 255), thickness)
         
