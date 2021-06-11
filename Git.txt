@@ -1,5 +1,5 @@
 git add .
 git status
-git commit -a -m "updated"
+git commit -a --allow-empty-message -m 
 git pull
 git push origin main
