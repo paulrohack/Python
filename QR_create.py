@@ -10,10 +10,10 @@ dirName = 'Qr_Images'
 try:
     os.mkdir(dirName)
     print("Directory " , dirName ,  " Created ")
-    img.save(f'Qr_Images/{save}.png')
+    img.save(f'Qr_Images/{save}.jpg')
     print("QR saved")
  
 except FileExistsError:
-    img.save(f'Qr_Images/{save}.png')
+    img.save(f'Qr_Images/{save}.jpg')
     print("QR saved")
    

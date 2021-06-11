@@ -14,6 +14,11 @@ WIN = py.display.set_mode((W, H))
 sx, sy = W//2, H//2
 
 while True:
+    if py.mouse.get_pressed()[2]:
+        area = py.Rect(0, 0, W, H)
+        screenShot = WIN.subsurface(area)
+        print('Screenshot Saved')
+        py.image.save(WIN,f"AlgorithmicBotany\\Images\\MaurerRose[{n,d}].png")
     for i in range(361):
         k = i * d * math.pi / 180
         r = 300 * math.sin(n * k)

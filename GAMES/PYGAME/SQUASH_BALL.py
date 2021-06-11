@@ -8,7 +8,7 @@ Y_VEL = -2
 X_PADDLE = 5
 
 SCORE = 0
-#ICON = ('C:\\Users\\paulr\\Dropbox\\My PC (LAPTOP-EFND9F5U)\\Desktop\\Projects\\My_Projects_All\\Projects-Python-master\\PyGame\\assets\\joystick.png')
+# ICON = ('assets\\joystick.png')
 
 #window size
 W =  1000
@@ -16,7 +16,7 @@ H =  700
 #surface
 pygame.display.set_caption("SQUASH BALL GAME ")
 WIN = pygame.display.set_mode((W, H))
-#pygame.display.set_icon(pygame.image.load(ICON))
+# pygame.display.set_icon(pygame.image.load(ICON))
 black = (0,0,0)
 white = (255,255,255)
 green = (34,139,34)

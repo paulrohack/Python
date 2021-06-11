@@ -1,9 +1,8 @@
 from flask import Flask,request,render_template,redirect,url_for
 import random,time
 from random import randint
-path = 'D:\\Projects\\My_Projects_All\\Projects-Python-master\\FLASK\\PromiseVerse\\'
-data = (path + "VERSE.txt")
-file1 = open(data, 'r') 
+
+file1 = open('FLASK\VERSE.txt', 'r') 
 Lines = file1.readlines() 
 
 

@@ -10,7 +10,7 @@ WIDTH, HEIGHT = 750, 680
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooter")
 pygame.mixer.music.set_volume(0.3)
-path = 'D:\\Projects\\My_Projects_All\\Projects-Python-master\\PYGAME\\assets\\'
+path = 'GAMES\\PYGAME\\assets\\'
 song = pygame.mixer.music.load(path + 'song.mp3')
 pygame.mixer.music.play(-1)
 #Load Icons
@@ -227,9 +227,9 @@ def main():
         lives_label = main_font.render(f"Lives: {lives}", 0, (255,255,255))
         level_label = main_font.render(f"Level: {level}", 0, (255,255,255))
         title = main_font.render("__Space Shooter__", 0, (255,255,255))
-        border = main_font.render("----------------------------------------------------------------------------------------------", 0, (255,255,255))
+        # border = main_font.render("----------------------------------------------------------------------------------------------", 0, (255,255,255))
         WIN.blit(lives_label, (10, 10))
-        WIN.blit(border, (0, 70))
+        # WIN.blit(border, (0, 70))
         WIN.blit(level_label, (WIDTH - level_label.get_width() - 10, 10))
         WIN.blit(title, (WIDTH/2 - title.get_width()/2, 10))
         
