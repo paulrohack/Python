@@ -12,7 +12,7 @@ cap = cv2.VideoCapture(0)
 model = tensorflow.keras.models.load_model('MaskDetection\High_keras_model.model')
 # model = tensorflow.keras.models.load_model('MaskDetection\keras_model.h5')
 
-path = 'H:\Python\MaskDetection\img.jpg'
+path = 'MaskDetection\img.jpg'
 size = (224, 224)
 text = '.......'
 
@@ -25,7 +25,7 @@ while True:
     # img = cv2.resize(img, size)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = Image.open(path)
-    
+
     # image = Image.fromarray(img)
     # image.show()
 
