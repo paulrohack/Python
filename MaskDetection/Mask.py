@@ -9,7 +9,9 @@ nn = 0
 pn = 0
 n = 0
 cap = cv2.VideoCapture(0)
-model = tensorflow.keras.models.load_model('H:\Python\MaskDetection\keras_model.h5')
+model = tensorflow.keras.models.load_model('MaskDetection\High_keras_model.model')
+# model = tensorflow.keras.models.load_model('MaskDetection\keras_model.h5')
+
 path = 'H:\Python\MaskDetection\img.jpg'
 size = (224, 224)
 text = '.......'
@@ -23,6 +25,7 @@ while True:
     # img = cv2.resize(img, size)
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     image = Image.open(path)
+    
     # image = Image.fromarray(img)
     # image.show()
 
@@ -32,10 +35,11 @@ while True:
     data[0] = normalized_image_array
 
     prediction = model.predict(data)
-    nomask = prediction[0,0]
-    mask = prediction[0,1]
+    mask = prediction[0,0]
+    nomask = prediction[0,1]
     maxp = max(mask, nomask)
     pn = n
+
     if  maxp == mask:
         n = 0
         nn = 0
