@@ -3,6 +3,7 @@ from PIL import ImageGrab
 from screeninfo import get_monitors
 
 def take_screenshot(all=False):
+    
     screenshot = ImageGrab.grab(all_screens=all)
     converted = numpy.array(screenshot)
     converted = cv2.cvtColor(converted, cv2.COLOR_BGR2RGB)
