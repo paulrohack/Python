@@ -1,14 +1,19 @@
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture(0)
-while True:
-    _, img = cap.read()
-    img = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+# cap = cv2.VideoCapture(0)
 
-    l = np.array([0, 0, 0])
-    u = np.array([43, 222, 152])
-    img = cv2.inRange(img, l, u)
-    cv2.imshow('s', img)
+# while True:
+cv2.imread('') 
+b = img[0][0][0]
+g = img[0][0][1]
+r = img[0][0][2]
+if b > r and b > g:
+    print('blue')
+if g > r and g > b:
+    print('green')
+if r > b and r > g:
+    print('red')
 
-    cv2.waitKey(1)
+cv2.imshow('s', img)
+cv2.waitKey(1)
