@@ -6,8 +6,8 @@ path = 'G:\Music\DownloadedMusic'
 try:
     os.mkdir(path)
 except FileExistsError:
-    print("Path already exists")
-
+    # print("Path already exists")
+    pass
 while run:
     ask = input("[Y]outube or [Q]uit :")
     if ask.upper() == 'Y':
