@@ -1,5 +1,7 @@
 import pygame as py
 from matplotlib import pyplot as plt
+from numba import jit
+import time
 W, H = 600, 600
 WIN = py.display.set_mode((500, H))
 
@@ -9,6 +11,7 @@ def map(value, min1, max1, min2, max2):
 max_iteration = 100
 WIN.fill((0, 0, 0))
 m = []
+
 for xp in range(0, W, 1):
     for yp in range(0, H, 1):
         a = map(xp, 0, W, -2, 2)
