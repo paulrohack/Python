@@ -1,5 +1,6 @@
-import random
-path = 'D:\\Projects\\My_Projects_All\\Projects-Python-master\\GAMES\\GAME'
+import random, os
+path = 'GAME'
+os.system('cls')
 def spacedOut(word, guessed=[]):
     lenght = len(word)
     spacedWord = ' '
