@@ -13,7 +13,7 @@ def mean(n):
     total_nos = len(n)
     return round((total_sum/total_nos), 2)
 time_taken = []
-turns = int(input("How may Turns Would you want to try [recommended: 15 or 30 or 60]"))
+turns = int(input("How may Turns Would you want to try [recommended: 15 or 30 or 60]:  "))
 os.system('cls')
 print("When your ready hit ENTER!")
 if input() == "":

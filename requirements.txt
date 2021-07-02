@@ -1,0 +1,14 @@
+pygame
+selenium
+qrcode
+pyzbar
+tensorflow
+cvzone
+matplotlib
+pillow
+screeninfo
+pynput
+numpy
+youtube-dl
+wikipedia
+bs4
