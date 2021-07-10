@@ -1,4 +1,4 @@
-import cvzone
+from cvzone.PoseModule import PoseDetector
 import cv2
 import serial, time, os
 try:
@@ -13,12 +13,13 @@ run = True
 #     run = False
     
 if run:
-    cap = cv2.VideoCapture(0)
-    detector = cvzone.PoseDetector()
+    cap = cv2.VideoCapture(1)
+    detector = PoseDetector()
 while run:
     success, img = cap.read()
     img = detector.findPose(img, False)
     lmList = detector.findPosition(img)
+    print(lmList)
     if (lmList[0]) != []:
         # s.write(b'H')
         text = f"Intruder_Found_at_{round(time.time())}"

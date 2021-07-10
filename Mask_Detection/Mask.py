@@ -9,10 +9,10 @@ nn = 0
 pn = 0
 n = 0
 cap = cv2.VideoCapture(0)
-model = tensorflow.keras.models.load_model('MaskDetection\High_keras_model.model')
+model = tensorflow.keras.models.load_model('Mask_Detection\High_keras_model.model')
 # model = tensorflow.keras.models.load_model('MaskDetection\keras_model.h5')
 
-path = 'MaskDetection\img.jpg'
+path = 'Mask_Detection\img.jpg'
 size = (224, 224)
 text = '.......'
 

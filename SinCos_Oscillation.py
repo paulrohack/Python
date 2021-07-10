@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
-from  numpy import cos, sin, tan, arange, pi
+from  numpy import cos, sin, arange, pi
 
-x_val = arange(0.0, 2.0, 0.01)
+x_val = arange(0.0, 1.0, 0.001)
 
 normal = []
 for n in range(len(x_val)):

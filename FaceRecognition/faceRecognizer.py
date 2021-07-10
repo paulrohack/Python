@@ -1,6 +1,6 @@
 import face_recognition
 import cv2
-image_file = "FaceRecognition\____.jpg"
+image_file = "G:\Pictures\Camera Roll\paul.jpg"
 k_image = face_recognition.load_image_file(image_file)
 cap = cv2.VideoCapture(0)
 while True:

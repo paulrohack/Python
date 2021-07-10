@@ -1,5 +1,5 @@
 import random, os
-path = 'GAME'
+path = 'CLI_Games'
 os.system('cls')
 def spacedOut(word, guessed=[]):
     lenght = len(word)
@@ -83,7 +83,7 @@ Wrong_guess[7] =('''
  #################################
 #   Actual game play starts here   #
  ##################################
-txt = open(path + '\\easy_words.txt')
+txt = open('CLI_Games\easy_words.txt')
 words = txt.readlines()
 listWORDS = (words[random.randrange(0,len(words))])
 word =(listWORDS).upper()

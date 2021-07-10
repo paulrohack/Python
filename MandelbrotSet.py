@@ -1,6 +1,6 @@
 import pygame as py
 from matplotlib import pyplot as plt
-from numba import jit
+
 import time
 W, H = 600, 600
 WIN = py.display.set_mode((500, H))
