@@ -31,8 +31,8 @@ class Pendulum():
 
 
 
-lenght = int(input("lenght of The String: "))
-pend = Pendulum(lenght, 20)
+length = int(input("lenght of The String: ")) * 10
+pend = Pendulum(length, 20)
 
 while True:
     WIN.fill((210, 224, 187))
